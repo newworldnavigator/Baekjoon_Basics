@@ -5,5 +5,5 @@ This repository contains all source codes, which I used to solve level 5 problem
 Since I just started to learn Java, codes are not clean and efficient.   
 Please give me feedbacks if there are any information or tips to improve my skills.   
 
-Cheers,
+Cheers,   
 Navigator
