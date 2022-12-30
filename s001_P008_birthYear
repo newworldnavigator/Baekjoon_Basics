@@ -1,0 +1,11 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class Main {
+	public static void main(String[] args) throws Exception {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int birth_Taiwan = Integer.parseInt(br.readLine());
+		int birth_Korea = birth_Taiwan - 543;
+		System.out.println(birth_Korea);
+	}
+}
