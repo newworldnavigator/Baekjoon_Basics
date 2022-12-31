@@ -10,8 +10,12 @@ public class Main {
 		int min = Integer.parseInt(st.nextToken()) - 45;
 		if (min >= 0) {
 			System.out.printf("%d %d", hour, min);
-		} else {
+		} else if (hour != 0) {
 			hour -= 1;
+			min += 60;
+			System.out.printf("%d %d", hour, min);
+		} else {
+			hour = 23;
 			min += 60;
 			System.out.printf("%d %d", hour, min);
 		}
