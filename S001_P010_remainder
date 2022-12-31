@@ -1,0 +1,32 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+import java.util.ArrayList;
+
+
+public class Main {
+	public static int numInput(StringTokenizer st) {
+		return Integer.parseInt(st.nextToken());
+	}
+	
+	public static void main(String[] args) throws Exception {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		
+		ArrayList<Integer> numList = new ArrayList<Integer>();
+		for (int i=0; i<3; i++) {
+			numList.add(numInput(st));
+		}
+		
+		int num1 = numList.get(0);
+		int num2 = numList.get(1);
+		int num3 = numList.get(2);
+		
+		int result1 = (num1 + num2) % num3;
+		int result2 = ((num1 % num3) + (num2 % num3)) % num3;
+		int result3 = (num1 * num2) % num3;
+		int result4 = ((num1 % num3) * (num2 % num3)) % num3;
+		
+		System.out.printf("%d\n%d\n%d\n%d", result1, result2, result3, result4);
+	}
+}
