@@ -1,0 +1,32 @@
+import java.io.BufferedReader; 
+import java.io.InputStreamReader; 
+
+public class Main {
+	public static void main(String[] args) throws Exception {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int start = Integer.parseInt(br.readLine());
+		
+		if (start < 10) {
+			start *= 10;
+		}
+		
+		int N = 1;
+		int tens_org = start / 10;
+		int digits_org = start % 10;
+		int sum = tens_org + digits_org;
+    int tens_sum = sum / 10;
+		int digits_sum = sum % 10;
+		
+		int result = digits_org * 10 + digits_sum;
+		while (start != result) {
+			N++;
+			tens_org = result / 10;
+			digits_org = result %10;
+			sum = tens_org + digits_org;
+			tens_sum = sum / 10;
+			digits_sum = sum % 10;
+			result = digits_org * 10 + digits_sum;
+		}
+		System.out.println(N);
+	}
+}
