@@ -1,0 +1,27 @@
+import java.io.BufferedReader; 
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class Main {
+	public static void main(String[] args) throws Exception {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		int repeat = Integer.parseInt(st.nextToken());
+		int limit = Integer.parseInt(st.nextToken());
+		
+		st = new StringTokenizer(br.readLine());
+		ArrayList<Integer> numList = new ArrayList<Integer>();
+		for (int i = 0; i < repeat; i++) {
+			numList.add(Integer.parseInt(st.nextToken()));
+		}
+		StringBuilder sb = new StringBuilder();
+		for (int i = 0; i < repeat; i++) {
+			if (numList.get(i) < limit) {
+				sb.append(numList.get(i)).append(" ");
+			}
+		}
+		System.out.println(sb);
+	}
+}
