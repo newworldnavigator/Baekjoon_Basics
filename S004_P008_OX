@@ -1,0 +1,27 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class Main {
+	public static void main(String[] args) throws Exception {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringBuilder sb = new StringBuilder();
+		int repeat = Integer.parseInt(br.readLine());
+		for (int i = 0; i < repeat; i++) {
+			int totalScore = 0;
+			int tempScore= 0;
+			String problems = br.readLine();
+			int length = problems.length();
+			for (int j = 0; j < length; j++) {
+				char problem = problems.charAt(j);
+				if (problem == 'O') {
+					tempScore += 1;
+					totalScore += tempScore;
+				} else if (problem == 'X') {
+					tempScore = 0;
+				}
+			}
+			sb.append(totalScore).append("\n");
+		}
+		System.out.println(sb);
+	}
+}
