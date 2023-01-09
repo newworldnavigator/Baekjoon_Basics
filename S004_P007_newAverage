@@ -1,0 +1,26 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class Main {
+	public static void main(String[] args) throws Exception {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int count = Integer.parseInt(br.readLine());
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		ArrayList<Integer> scores = new ArrayList<Integer>();
+		for (int i = 0; i < count; i++) {
+			scores.add(Integer.parseInt(st.nextToken()));
+		}
+		int maxScore = Collections.max(scores);
+		double newSum = 0;
+		ArrayList<Double> newScores = new ArrayList<Double>();
+		for (int i = 0; i < count; i++) {
+			double tempNum = (double)scores.get(i) * 100 / maxScore;
+			newSum += tempNum;
+			newScores.add(tempNum);
+		}
+		System.out.println(newSum / (double)count);
+	}
+}
