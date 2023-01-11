@@ -1,0 +1,38 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+
+public class Main {
+	public static void main(String[] args) {
+		ArrayList<Integer> numList = new ArrayList<Integer>();
+		for (int i = 1; i < 10000; i ++) {
+			int startNum = i;
+			while (startNum < 10000) {
+				if (startNum < 10) {
+					startNum += startNum;
+				} else if (startNum < 100) {
+					startNum += startNum / 10 + startNum % 10;
+				} else if (startNum < 1000) {
+					startNum += startNum / 100 + startNum / 10 % 10 + startNum % 10;
+				} else {
+					startNum += startNum / 1000 + startNum / 100 % 10 + startNum / 10 % 10 + startNum % 10;
+				}
+				if (startNum <= 10000) {
+					numList.add(startNum);
+				}
+			}
+		}
+		Collections.sort(numList);
+		
+		HashSet<Integer> numSet = new HashSet<Integer>(numList);
+		numList = new ArrayList<Integer>(numSet);
+		
+		StringBuilder sb = new StringBuilder();
+		for (int i = 1; i < 10000; i++) {
+			if (numList.indexOf(i) == -1) {
+				sb.append(i).append("\n");
+			}
+		}
+		System.out.println(sb);
+	}
+}
