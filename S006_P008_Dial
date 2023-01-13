@@ -1,0 +1,36 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+
+public class Main {
+	public static void main(String[] args) throws Exception {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		String target = br.readLine();
+		int length = target.length();
+		ArrayList<Character> charList = new ArrayList<Character>();
+		for (int i = 0; i < length; i ++) {
+			charList.add(target.charAt(i));
+		}
+		int time = 0;
+		for (int i = 0; i < charList.size(); i++) {
+			if (charList.get(i) == 'A' || charList.get(i) == 'B' || charList.get(i) == 'C') {
+				time += 2 + 1;
+			} else if (charList.get(i) == 'D' || charList.get(i) == 'E' || charList.get(i) == 'F') {
+				time += 3 + 1;
+			} else if (charList.get(i) == 'G' || charList.get(i) == 'H' || charList.get(i) == 'I') {
+				time += 4 + 1;
+			} else if (charList.get(i) == 'J' || charList.get(i) == 'K' || charList.get(i) == 'L') {
+				time += 5 + 1;
+			} else if (charList.get(i) == 'M' || charList.get(i) == 'N' || charList.get(i) == 'O') {
+				time += 6 + 1;
+			} else if (charList.get(i) == 'P' || charList.get(i) == 'Q' || charList.get(i) == 'R' || charList.get(i) == 'S') {
+				time += 7 + 1;
+			} else if (charList.get(i) == 'T' || charList.get(i) == 'U' || charList.get(i) == 'V') {
+				time += 8 + 1;
+			} else if (charList.get(i) == 'W' || charList.get(i) == 'X' || charList.get(i) == 'Y' || charList.get(i) == 'Z') {
+				time += 9 + 1;
+			}
+		}
+		System.out.println(time);
+	}
+}
