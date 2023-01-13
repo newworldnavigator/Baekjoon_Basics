@@ -1,4 +1,4 @@
-# Baekjoon_Basics
+# Baekjoon_Java_Basics
 Hi Navigator,
 
 This repository contains source codes, which I used to solve stage 1~6 problems in 'https://www.acmicpc.net/step'.    
